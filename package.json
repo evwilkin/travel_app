@@ -1,0 +1,29 @@
+{
+  "name": "travel_app",
+  "version": "1.0.0",
+  "description": "Travel planning, journaling, and inspiration application build with Node.js, Express.js, Postgres, Sequelize, HTML, CSS and Javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evwilkin/travel_app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evwilkin/travel_app/issues"
+  },
+  "homepage": "https://github.com/evwilkin/travel_app#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "pg": "^4.4.6",
+    "pg-hstore": "^2.3.2",
+    "request": "^2.69.0",
+    "sequelize": "^3.19.3"
+  }
+}

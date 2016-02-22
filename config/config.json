@@ -1,0 +1,17 @@
+{
+  "development": {
+    "database": "travel_app",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "database": "travel_app",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "database": "travel_app",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
