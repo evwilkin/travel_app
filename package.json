@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/evwilkin/travel_app#readme",
   "dependencies": {
+    "bcrypt": "^0.8.5",
     "body-parser": "^1.15.0",
+    "connect-flash": "^0.1.1",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
     "express-session": "^1.13.0",

@@ -2,4 +2,16 @@
 
 <h1>Hello Wishlist</h1>
 
+<a href="/wishlist/new">
+	<button class="btn">New Wishlist</button>
+</a>
+
+<% lists.forEach(function(list) { %>
+
+<h3><%= list.name %></h3>
+<h4><%= list.category %></h4>
+<p><%= list.item %></p>
+
+<% }); %>
+
 <% include ../partials/footer.ejs %>
