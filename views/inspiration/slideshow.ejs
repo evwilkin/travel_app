@@ -1,0 +1,11 @@
+<% include ../partials/header.ejs %>
+
+<% pictures.forEach(function(picture) { %>
+
+<img class="materialboxed" src="https://farm<%= picture.farm %>.staticflickr.com/<%= picture.server %>/<%= picture.id %>_<%= picture.secret %>.jpg" alt="<%= q %> pictures" />
+
+
+<% }); %>
+
+<% include ../partials/footer.ejs %>
+

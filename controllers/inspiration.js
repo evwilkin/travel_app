@@ -13,12 +13,14 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
 	q = req.body.images;
 	flickr.get("photos.search", {
+		"sort": "relevance",
 		"text": q
 	}, function(err, result) {
+    	var pictures = result.photos.photo;
     	if (err) {
     		res.send(err);
     	} else {
-    		res.send(result.photos);
+    		res.render('inspiration/slideshow', {pictures: pictures, q: q});
 		}
 	});
 });

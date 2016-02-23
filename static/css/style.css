@@ -1,3 +1,14 @@
 body {
 	background-color: red;
 }
+
+img.materialboxed {
+	width: 19%;
+	height: 182px;
+	overflow: hidden;
+	display: inline;
+}
+
+div.material-placeholder {
+	display: inline;
+}
