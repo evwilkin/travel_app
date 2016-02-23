@@ -1,0 +1,15 @@
+<% include ../partials/header.ejs %>
+
+<h1>New Journal</h1>
+
+<form method="POST" action="/journal">
+	<input name="title" placeholder="Title" autofocus />
+	<input name="place" placeholder="Location" />
+	<div class=".input-field">
+		<label for="textarea1">Journal Entry</label>
+		<textarea id="textarea1" name="text" class="materialize-textarea"></textarea>
+	</div>
+	<button class="btn" type="submit">Log Journal</button>
+</form>
+
+<% include ../partials/footer.ejs %>

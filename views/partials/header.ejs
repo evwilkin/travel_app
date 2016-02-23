@@ -3,37 +3,53 @@
 <head>
 	<title>TravelTo</title>
 	<!-- Latest compiled and minified CSS & JS -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 
-<!-- <nav class="navbar navbar-default" role="navigation">
-	<a class="navbar-brand" href="/">Home</a>
-	<ul class="nav navbar-nav">
-		<li class="active">
-			<a href="/auth/login">Log In</a>
-		</li>
-		<li>
-			<a href="/wishlist">Wishlists</a>
-		</li>
-		<li>
-			<a href="/journal">Journal</a>
-		</li>
-		<li>
-			<a href="/inspiration">Inspiration</a>
-		</li>
+<% if (currentUser) { %>
+
+	<ul id="dropdown1" class="dropdown-content">
+	  <li><a id="dropdown" href="/auth/logout">Log Out</a></li>
 	</ul>
-</nav> -->
+
+<% } %>
+
 
  <nav>
     <div class="nav-wrapper">
       	<a href="/" class="brand-logo">Logo</a>
+      	<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      	<ul class="side-nav" id="mobile-demo">
+    	<li><a href="/wishlist">Wishlists</a></li>
+	        <li><a href="/journal">Journal</a></li>
+	        <li><a href="/inspiration">Inspiration</a></li>
+
+	        <% if (currentUser) { %>
+
+	        	<li><a class="dropdown-button" href="#!" data-activates="dropdown1"><%= currentUser.username %><i class="material-icons right">arrow_drop_down</i></a></li>
+	        	<li><a id="dropdown" href="/auth/logout">Log Out</a></li>
+	        <% } else { %>
+	        	<li><a href="/auth/login">Log In</a></li>
+	        <% } %>
+
+    	</ul>
       	<ul id="nav-mobile" class="right hide-on-med-and-down">
-	        <li><a href="/auth/login">Log In</a></li>
 	        <li><a href="/wishlist">Wishlists</a></li>
 	        <li><a href="/journal">Journal</a></li>
 	        <li><a href="/inspiration">Inspiration</a></li>
+
+	        <% if (currentUser) { %>
+
+	        	<li><a class="dropdown-button" href="#!" data-activates="dropdown1"><%= currentUser.username %><i class="material-icons right">arrow_drop_down</i></a></li>
+
+	        <% } else { %>
+	        	<li><a href="/auth/login">Log In</a></li>
+	        <% } %>
+
     	</ul>
+
     </div>
  </nav>

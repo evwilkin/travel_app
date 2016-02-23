@@ -30,13 +30,14 @@ router.post('/', function(req, res) {
 	var category = req.body.category;
 	var item = req.body.item;
 	var userId = req.session.userId;
-	db.wishlist.create({
-		name: name,
-		category: category,
-		item: item,
-		userId: userId
-	}).then(function() {
-		res.redirect('/wishlist');
+	db.user.findById(userId).then(function(user) {
+		user.createWishlist({
+			name: name,
+			category: category,
+			item: item
+		}).then(function() {
+			res.redirect('/wishlist');
+		});
 	});
 });
 
