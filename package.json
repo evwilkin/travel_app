@@ -23,6 +23,8 @@
     "ejs": "^2.4.1",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
+    "flickrapi": "^0.4.1",
+    "node-flickr": "^1.0.0",
     "pg": "^4.4.6",
     "pg-hstore": "^2.3.2",
     "request": "^2.69.0",

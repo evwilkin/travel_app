@@ -40,4 +40,8 @@ app.use('/auth', require('./controllers/auth'));
 
 app.use('/wishlist', require('./controllers/wishlist'));
 
+app.use('/journal', require('./controllers/journal'));
+
+app.use('/inspiration', require('./controllers/inspiration'));
+
 app.listen(3000);
