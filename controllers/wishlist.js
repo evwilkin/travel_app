@@ -3,26 +3,16 @@ var db = require('../models');
 var router = express.Router();
 
 router.get('/', function(req, res) {
-	var user = req.currentUser.id;
-	db.wishlist.findAll({
-		where: {
-			userId: user
-		}
-	}).then(function(lists) {
-		res.render('wishlist/index', {lists: lists});
-	});
-});
-
-router.get('/new', function(req, res) {
+	var userId = req.currentUser.id;
 	if (req.currentUser.username) {
-		res.render('wishlist/new');
+		db.user.findById(userId).then(function(user) {
+			user.getWishlists().then(function(lists) {
+				res.render('wishlist/index', {lists: lists});
+			});
+		});
 	} else {
 		res.redirect('/auth/login');
 	}
-});
-
-router.get('/:id', function(req, res) {
-	res.render('wishlist/show');
 });
 
 router.post('/', function(req, res) {
@@ -40,5 +30,42 @@ router.post('/', function(req, res) {
 		});
 	});
 });
+
+router.get('/new', function(req, res) {
+	if (req.currentUser.username) {
+		res.render('wishlist/new');
+	} else {
+		res.redirect('/auth/login');
+	}
+});
+
+router.get('/:id', function(req, res) {
+	var listId = req.params.id;
+	var userId = req.currentUser.id;
+	db.wishlist.findById(listId).then(function(list) {
+		if (list.userId === userId) {
+			console.log("List id:"+list.userId+" UserId: "+userId)
+			res.render('wishlist/show', {list: list});
+		} else {
+			res.send('Only that user can see their list');
+		}
+	});
+});
+
+/*router.post('/:id', function(req, res) {
+	var listId = req.params.id;
+	var currentUser = req.currentUser.id;
+	var newItem = req.body.item;
+	db.wishlist.findOne({
+		where: {
+			id: listId
+		}
+	}).then(function(list) {
+		list.append
+	})
+	}
+})*/
+
+
 
 module.exports = router;

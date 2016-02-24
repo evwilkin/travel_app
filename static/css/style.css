@@ -2,13 +2,31 @@ body {
 	background-color: red;
 }
 
+h1 {
+
+	text-align: center;
+}
+
 img.materialboxed {
 	width: 19%;
-	height: 182px;
+	height: 9%;
 	overflow: hidden;
 	display: inline;
 }
 
 div.material-placeholder {
 	display: inline;
+}
+
+#homePhoto {
+	background-image: url('/images/DSC_7758.jpg');
+	width: 100%;
+	height: 500px;
+	background-size: cover;
+}
+
+#homeColor {
+	background-color: rgba(0,0,0,0.7);
+	width: 100%;
+	height: 100%;
 }

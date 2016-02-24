@@ -1,5 +1,11 @@
 <% include ../partials/header.ejs %>
 
-<h1>A specific wishlist</h1>
+
+<h3><%= list.name %></a></h3>
+<h4><%= list.category %></h4>
+<p><%= list.item %></p>
+<form method="POST">
+	<input name="item" type="text" placeholder="Add item" />
+</form>
 
 <% include ../partials/footer.ejs %>

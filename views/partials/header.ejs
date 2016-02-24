@@ -5,7 +5,7 @@
 	<!-- Latest compiled and minified CSS & JS -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
 
@@ -28,8 +28,6 @@
 	        <li><a href="/inspiration">Inspiration</a></li>
 
 	        <% if (currentUser) { %>
-
-	        	<li><a class="dropdown-button" href="#!" data-activates="dropdown1"><%= currentUser.username %><i class="material-icons right">arrow_drop_down</i></a></li>
 	        	<li><a id="dropdown" href="/auth/logout">Log Out</a></li>
 	        <% } else { %>
 	        	<li><a href="/auth/login">Log In</a></li>

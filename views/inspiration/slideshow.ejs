@@ -1,11 +1,15 @@
 <% include ../partials/header.ejs %>
 
+<div id="slideshow">
+
 <% pictures.forEach(function(picture) { %>
 
-<img class="materialboxed" src="https://farm<%= picture.farm %>.staticflickr.com/<%= picture.server %>/<%= picture.id %>_<%= picture.secret %>.jpg" alt="<%= q %> pictures" />
+<img class="materialboxed responsive-img" src="https://farm<%= picture.farm %>.staticflickr.com/<%= picture.server %>/<%= picture.id %>_<%= picture.secret %>.jpg" alt="<%= q %> pictures" />
 
 
 <% }); %>
+
+</div>
 
 <% include ../partials/footer.ejs %>
 

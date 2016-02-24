@@ -8,9 +8,10 @@
 
 <% lists.forEach(function(list) { %>
 
-<h3><%= list.name %></h3>
+<h3><a href="/wishlist/<%= list.id %>"><%= list.name %></a></h3>
 <h4><%= list.category %></h4>
 <p><%= list.item %></p>
+
 
 <% }); %>
 
