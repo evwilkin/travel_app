@@ -11,6 +11,13 @@ nav div ul li a {
 	font-size: 1.3em;
 }
 
+i.inverse {
+	color: black;
+	padding-left: 1%;
+	font-size: 2.7rem;
+	height: 56px;
+}
+
 #body {
 	background-color: black;
 	text-align: center;
@@ -42,7 +49,7 @@ ul.tabs {
 }
 
 .background {
-	background-color: rgba(0,0,0,0.96);
+	background-color: rgba(0,0,0,0.8);
 }
 
 .background div p {
@@ -57,11 +64,62 @@ ul.tabs {
 	width: 100%;
 }
 
-img.materialboxed {
-	width: 19%;
-	height: 9%;
-	overflow: hidden;
+div.material-placeholder {
 	display: inline;
+}
+
+img.materialboxed {
+	width: 45%;
+	height: 15%;
+	display: inline;
+}
+
+footer.page-footer {
+	background-color: black;
+}
+
+div.collapsible-header {
+	background-color: teal;
+	border: none;
+	margin-bottom: 1%;
+}
+
+#journals {
+	text-align: left;
+}
+
+p.journalText {
+	font-size: 1.5em;
+	text-align: justify;
+}
+
+#flickr {
+	position: relative;
+	bottom: 0;
+}
+
+#accordian {
+	border: none;
+}
+
+#accordian li {
+	background-color: teal;
+}
+
+h3 {
+	display: inline;
+}
+
+.table1 {
+	width: 33%;
+}
+
+.table2 {
+	width: 33%;
+}
+
+.table3 {
+	width: 33%;
 }
 
 @media (min-width: 800px) {
@@ -84,5 +142,12 @@ img.materialboxed {
 
 	.homeLink {
 		width: 50%;
+	}
+
+	img.materialboxed {
+	width: 19%;
+	height: 9%;
+	overflow: hidden;
+	display: inline;
 	}
 }

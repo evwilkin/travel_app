@@ -1,18 +1,36 @@
 <% include ../partials/header.ejs %>
 
-<h1>Hello Wishlist</h1>
+<h1>Wishlists</h1>
 
 <a href="/wishlist/new">
 	<button class="btn">New Wishlist</button>
 </a>
+<div class="container">
+<table class="centered highlight">
+    <thead>
+    	<tr></tr>
+    </thead>
+    <tbody>
+<!-- <ul id="accordian" class="collapsible col s8 push-s2" data-collapsible="accordion"> -->
+	<% lists.forEach(function(list) { %>
 
-<% lists.forEach(function(list) { %>
+          <tr>
+            <td class="table1">
+            	<a href="/wishlist/<%= list.id %>"><%= list.name %></a>
+            </td>
+            <td class="table2">
+            	<%= list.category %>
+            </td>
+            <td class="table3">
+            	<%= list.item %>
+            </td>
+          </tr>
+          
+        
 
-<h3><a href="/wishlist/<%= list.id %>"><%= list.name %></a></h3>
-<h4><%= list.category %></h4>
-<p><%= list.item %></p>
-
-
-<% }); %>
-
+	<% }); %>
+	</tbody>
+      </table>
+<!-- </ul> -->
+</div>
 <% include ../partials/footer.ejs %>

@@ -7,7 +7,6 @@ router.get('/', function(req, res) {
 	if (userId) {
 		db.user.findById(userId).then(function(user) {
 			user.getJournals().then(function(journals) {
-				console.log(journals);
 				res.render('journal/index', {journals: journals});
 			});
 		});
@@ -23,6 +22,23 @@ router.get('/new', function(req, res) {
 		res.redirect('/auth/login');
 	}
 });
+
+router.get('/:id', function(req, res) {
+	var userId = req.currentUser.id;
+	var journalId = req.params.id;
+	if (userId) {
+		db.journal.findById(journalId).then(function(journal) {
+			if (journal.userId === userId) {
+				res.render('journal/show', {journal: journal});
+			} else {
+				res.send('Only that user can view their journals.');
+			}
+		});
+	} else {
+		res.redirect('/auth/login');
+	}
+});
+
 
 router.post('/', function(req, res) {
 	var userId = req.currentUser.id;
