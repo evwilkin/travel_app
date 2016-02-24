@@ -1,13 +1,52 @@
 <% include partials/header.ejs %>
-
 <div class="container">
+<div class="home">
 	<div class="row">
-		<div id="homePhoto" class="col s8 push-s2">
-			<div id="homeColor">
-				<h1>My app</h1>
-			</div>
+		<div class="text col s10 push-s1">
+			<h1 class="col s10 push-s1">TravelTo</h1>	
 		</div>
 	</div>
+
+	<div class="row">
+	    <div class="col s12">
+		    <ul class="tabs">
+		        <li class="tab col s4"><a class="active" href="#wishlists">Wishlists</a></li>
+		        <li class="tab col s4"><a href="#journal">Journal</a></li>
+		        <li class="tab col s4"><a href="#inspiration">Inspiration</a></li>
+		    </ul>
+	    </div>
+	    <div class="background col s12">
+	    	<div id="wishlists" class="col s10 push-s1">
+	    		<h4>WISHLISTS HELP YOU PLAN FOR WHAT'S TO COME</h4>
+	    		<p>Track where to go &amp; what to do</p>
+	    		<p>Plan ahead for upcoming trips</p>
+	    		<p>Add to your wishlists at any time</p>
+	    		<a href="/wishlist">
+	    			<button class="btn homeLink">Go To Wishlists</button>
+    			</a>
+			</div>
+	    	<div id="journal" class="col s10 push-s1">
+	    		<h4>JOURNALS HELP YOU REMEMBER WHERE YOU'VE BEEN</h4>
+	    		<p>Document your travels</p>
+	    		<p>Archive your thoughts in one place</p>
+	    		<p>Add Titles and Places for easy reference</p>
+	    		<a href="/journal">
+	    			<button class="btn homeLink">Go To Journal</button>
+    			</a>
+	    	</div>
+	    	<div id="inspiration" class="col s10 push-s1">
+		    	<h4>INSPIRATION LETS YOU FUEL YOUR IMAGINATION</h4>
+		    	<p>Search for any location</p>
+		    	<p>View top results pulled immediately from Flickr</p>
+		    	<p>Find new places to visit &amp; Wishlists to start</p>
+		    	<a href="/inspiration">
+	    			<button class="btn homeLink">Go To Inspiration</button>
+    			</a>
+	    	</div>
+    	</div>
+	</div>
+
+</div>
 </div>
 
 <% include partials/footer.ejs %>

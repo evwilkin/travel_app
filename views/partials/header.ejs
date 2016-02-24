@@ -20,34 +20,37 @@
 
  <nav>
     <div class="nav-wrapper">
-      	<a href="/" class="brand-logo">Logo</a>
-      	<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      	<ul class="side-nav" id="mobile-demo">
-    	<li><a href="/wishlist">Wishlists</a></li>
-	        <li><a href="/journal">Journal</a></li>
-	        <li><a href="/inspiration">Inspiration</a></li>
+	    <div class="container">
+	      	<a href="/" class="brand-logo">Home</a>
+	      	<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	      	<ul class="side-nav" id="mobile-demo">
+	    		<li><a href="/wishlist">Wishlists</a></li>
+		        <li><a href="/journal">Journal</a></li>
+		        <li><a href="/inspiration">Inspiration</a></li>
 
-	        <% if (currentUser) { %>
-	        	<li><a id="dropdown" href="/auth/logout">Log Out</a></li>
-	        <% } else { %>
-	        	<li><a href="/auth/login">Log In</a></li>
-	        <% } %>
+		        <% if (currentUser) { %>
+		        	<li><a id="dropdown" href="/auth/logout">Log Out</a></li>
+		        <% } else { %>
+		        	<li><a href="/auth/login">Log In</a></li>
+		        <% } %>
 
-    	</ul>
-      	<ul id="nav-mobile" class="right hide-on-med-and-down">
-	        <li><a href="/wishlist">Wishlists</a></li>
-	        <li><a href="/journal">Journal</a></li>
-	        <li><a href="/inspiration">Inspiration</a></li>
+	    	</ul>
+	      	<ul id="nav-mobile" class="right hide-on-med-and-down">
+		        <li><a href="/wishlist">Wishlists</a></li>
+		        <li><a href="/journal">Journal</a></li>
+		        <li><a href="/inspiration">Inspiration</a></li>
 
-	        <% if (currentUser) { %>
+		        <% if (currentUser) { %>
 
-	        	<li><a class="dropdown-button" href="#!" data-activates="dropdown1"><%= currentUser.username %><i class="material-icons right">arrow_drop_down</i></a></li>
+		        	<li><a class="dropdown-button" href="#!" data-activates="dropdown1"><%= currentUser.username %><i class="material-icons right">arrow_drop_down</i></a></li>
 
-	        <% } else { %>
-	        	<li><a href="/auth/login">Log In</a></li>
-	        <% } %>
+		        <% } else { %>
+		        	<li><a href="/auth/login">Log In</a></li>
+		        <% } %>
 
-    	</ul>
+	    	</ul>
 
+	    </div>
     </div>
  </nav>
+ <div id="body">

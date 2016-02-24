@@ -1,10 +1,60 @@
 body {
-	background-color: red;
+	background-color: black;
+	color: white;
+}
+
+nav {
+	background-color: #196ec2;
+}
+
+nav div ul li a {
+	font-size: 1.3em;
+}
+
+#body {
+	background-color: black;
+	text-align: center;
 }
 
 h1 {
-
 	text-align: center;
+}
+
+div.text  {
+	border: solid white 4px;
+	background-color: rgba(0,0,0,0.75);
+	margin: 10% auto;
+}
+
+div.text h1 {
+	margin: 10% auto;
+}
+
+div.home {
+	background-image: url("/images/forest.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+
+ul.tabs {
+	font-size: 1.3em;
+}
+
+.background {
+	background-color: rgba(0,0,0,0.96);
+}
+
+.background div p {
+	font-size: 1.2em;
+}
+
+.background div h4 {
+	font-size: 1.6em;
+}
+
+.homeLink {
+	width: 100%;
 }
 
 img.materialboxed {
@@ -14,19 +64,25 @@ img.materialboxed {
 	display: inline;
 }
 
-div.material-placeholder {
-	display: inline;
-}
+@media (min-width: 800px) {
+	
+	div.text h1 {
+		font-size: 8em;
+	}
 
-#homePhoto {
-	background-image: url('/images/DSC_7758.jpg');
-	width: 100%;
-	height: 500px;
-	background-size: cover;
-}
+	ul.tabs {
+		font-size: 1.8em;
+	}
 
-#homeColor {
-	background-color: rgba(0,0,0,0.7);
-	width: 100%;
-	height: 100%;
+	.background div p {
+		font-size: 1.8em;
+	}
+
+	.background div h4 {
+		font-size: 2.2em;
+	}
+
+	.homeLink {
+		width: 50%;
+	}
 }
