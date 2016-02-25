@@ -88,9 +88,17 @@ div.collapsible-header {
 	text-align: left;
 }
 
+div.card {
+	width: 100%;
+}
+
 p.journalText {
 	font-size: 1.5em;
 	text-align: justify;
+}
+
+#newJournal {
+	position: relative;
 }
 
 #flickr {
@@ -122,6 +130,7 @@ h3 {
 	width: 33%;
 }
 
+
 @media (min-width: 800px) {
 	
 	div.text h1 {
@@ -149,5 +158,27 @@ h3 {
 	height: 9%;
 	overflow: hidden;
 	display: inline;
+	}
+
+	div.card {
+		width: 100%;
+	}
+
+	#newJournal {
+		display: block;
+	}
+
+	#title {
+		font-size: 3em;
+	}
+
+	#journals {
+		width: 46%;
+		display: inline-block;
+		margin: 0 1%;
+	}
+
+	p.truncate {
+		font-size: 1.3em;
 	}
 }

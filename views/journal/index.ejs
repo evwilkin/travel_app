@@ -2,28 +2,29 @@
 
 <div class="container">
 
-	<h1>Journals</h1>
-	<a href="/journal/new">
+	<h1 class="pageTitle">Journals</h1>
+	<a id="newJournal" href="/journal/new">
 		<button class="btn">New Journal</button>
 	</a>
 
 	<% journals.forEach(function(journal) { %>
 	<div id="journals">
-		<div class="row">
-        	<div class="col s12">
+		<!-- <div class="row"> -->
+        	<!-- <div class="col s12 m6"> -->
         		<div class="card blue-grey darken-1">
             		<div class="card-content white-text">
-						<span class="card-title">
+						<span id="title" class="card-title">
 							<%= journal.dataValues.title %>
 						</span>
+						<p>Created: <%= journal.dataValues.createdAt %></p>
 						<p class="truncate"><%= journal.dataValues.text %></p>
 					</div>
             		<div class="card-action">
             			<a href="/journal/<%= journal.id %>">Read More</a>
         			</div>
     			</div>
-			</div>
-		</div>
+			<!-- </div> -->
+		<!-- </div> -->
 	</div>
 	<% }); %>
 
