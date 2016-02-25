@@ -2,7 +2,6 @@
 module.exports = function(sequelize, DataTypes) {
   var journal = sequelize.define('journal', {
     title: DataTypes.TEXT,
-    place: DataTypes.TEXT,
     text: DataTypes.TEXT,
     userId: DataTypes.INTEGER
   }, {
@@ -10,6 +9,7 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         // associations can be defined here
         models.journal.belongsTo(models.user);
+        models.journal.belongsToMany(models.tag, {through: "journalsTags"});
       }
     }
   });
