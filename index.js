@@ -44,4 +44,4 @@ app.use('/journal', require('./controllers/journal'));
 
 app.use('/inspiration', require('./controllers/inspiration'));
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
