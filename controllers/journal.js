@@ -42,18 +42,20 @@ router.get('/:id', function(req, res) {
 
 router.post('/', function(req, res) {
 	var userId = req.currentUser.id;
-	var title = req.body.title;
-	var place = req.body.place;
-	var text = req.body.text;
-	db.user.findById(userId).then(function(user) {
-		user.createJournal({
-			title: title,
-			place: place,
-			text: text
-		}).then(function() {
-			res.redirect('/journal');
+	if (userId) {
+		var title = req.body.title;
+		var text = req.body.text;
+		db.user.findById(userId).then(function(user) {
+			user.createJournal({
+				title: title,
+				text: text
+			}).then(function() {
+				res.redirect('/journal');
+			});
 		});
-	});
+	} else {
+		res.redirect('/auth/login');
+	}
 });
 
 

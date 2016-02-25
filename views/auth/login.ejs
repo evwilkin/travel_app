@@ -1,13 +1,20 @@
 <% include ../partials/header.ejs %>
 
-<h1>Log In</h1>
+<div class="container">
 
-<form method="POST">
-	<input name="username" type="text" placeholder="Username" autofocus/>
-	<input name="password" type="password" placeholder="Password" />
-	<a href="/">
-		<button type="submit" class="btn">Submit</button>
+	<h1>Log In</h1>
+	<a href="/auth/register">
+		<button class="btn">New User? Register here</button> 
 	</a>
-</form>
+
+	<form method="POST">
+		<input name="username" type="text" placeholder="Username" autofocus/>
+		<input name="password" type="password" placeholder="Password" />
+		<a href="/">
+			<button type="submit" class="btn">Submit</button>
+		</a>
+	</form>
+
+</div>
 
 <% include ../partials/footer.ejs %>

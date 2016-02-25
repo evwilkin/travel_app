@@ -1,15 +1,17 @@
 <% include ../partials/header.ejs %>
 
-<h1>New Journal</h1>
+<div class="container">
+
+<h1>New Journal Entry</h1>
 
 <form method="POST" action="/journal">
-	<input name="title" placeholder="Title" autofocus />
-	<input name="place" placeholder="Location" />
+	<input id="journalTitle" name="title" placeholder="Title" autofocus />
 	<div class=".input-field">
-		<label for="textarea1">Journal Entry</label>
-		<textarea id="textarea1" name="text" class="materialize-textarea"></textarea>
+		<textarea id="textarea1" name="text" class="materialize-textarea" placeholder="Journal Entry"></textarea>
 	</div>
-	<button class="btn" type="submit">Log Journal</button>
+	<button class="btn" type="submit">Log Journal Entry</button>
 </form>
+
+</div>
 
 <% include ../partials/footer.ejs %>

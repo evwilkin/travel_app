@@ -16,17 +16,21 @@ router.post('/login', function(req, res) {
 			username: username
 		}
 	}).then(function(user) {
-		bcrypt.compare(password, user.password, function(err, result) {
-			if (err) {
-				res.send(err);
-			} else if (result) {
-				req.session.userId = user.id;
-				console.log(user.id);
-  				res.redirect('/');
-			} else {
-				res.send('Username and/or password not found, please try again.');
-			}
-		});
+		if (user) {
+			bcrypt.compare(password, user.password, function(err, result) {
+				if (err) {
+					res.send(err);
+				} else if (result) {
+					req.session.userId = user.id;
+					console.log(user.id);
+	  				res.redirect('/');
+				} else {
+					res.send('Username and/or password not found, please try again.');
+				}
+			})
+		} else {
+			res.send('Username and/or password not found, please try again or register.');
+		}
 	});	
 });
 

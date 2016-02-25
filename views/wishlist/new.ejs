@@ -1,12 +1,14 @@
 <% include ../partials/header.ejs %>
 
-<h1>New Wishlist</h1>
+<div class="container">
+	<h1>New Wishlist</h1>
 
-<form action="/wishlist" method="POST">
-	<input name="name" type="text" placeholder="Wishlist Name" autofocus />
-	<input name="category" type="text" placeholder="Category" />
-	<input name="item" type="text" placeholder="item" />
-	<button type="submit">Submit</button>
-</form>
+	<form action="/wishlist" method="POST">
+		<input name="name" type="text" placeholder="Wishlist Name" autofocus />
+		<input name="category" type="text" placeholder="Category" />
+		<input name="item" type="text" placeholder="item" />
+		<button class="btn" type="submit">Submit</button>
+	</form>
+</div>
 
 <% include ../partials/footer.ejs %>

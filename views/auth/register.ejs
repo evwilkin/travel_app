@@ -1,15 +1,19 @@
 <% include ../partials/header.ejs %>
 
-<h1>Register</h1>
+<div class="container">
 
-<form method="POST">
-	<input name="username" type="text" placeholder="Choose a username" autofocus />
-	<input name="email" type="email" placeholder="Email address" />
-	<input name="password" type="password" placeholder="Choose a password" />
-	<input name="confirmPassword" type="password" placeholder="Confirm password" />
-	<a href="/">
-		<button class="btn" type="submit">Create Account</button>
-	</a>
-</form>
+	<h1>Register</h1>
+
+	<form method="POST">
+		<input name="username" type="text" placeholder="Choose a username" autofocus required />
+		<input name="password" type="password" placeholder="Choose a password" required />
+		<input name="email" type="email" placeholder="Enter email address" />
+		<!-- <input name="confirmPassword" type="password" placeholder="Confirm password" required /> -->
+		<a href="/">
+			<button class="btn" type="submit">Create Account</button>
+		</a>
+	</form>
+
+</div>
 
 <% include ../partials/footer.ejs %>

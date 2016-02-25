@@ -6,31 +6,29 @@
 	<button class="btn">New Wishlist</button>
 </a>
 <div class="container">
-<table class="centered highlight">
-    <thead>
-    	<tr></tr>
-    </thead>
-    <tbody>
-<!-- <ul id="accordian" class="collapsible col s8 push-s2" data-collapsible="accordion"> -->
-	<% lists.forEach(function(list) { %>
+    <table class="centered highlight">
+        <thead>
+        	<tr></tr>
+        </thead>
+        <tbody>
+    <!-- <ul id="accordian" class="collapsible col s8 push-s2" data-collapsible="accordion"> -->
+    	<% lists.forEach(function(list) { %>
 
-          <tr>
-            <td class="table1">
-            	<a href="/wishlist/<%= list.id %>"><%= list.name %></a>
-            </td>
-            <td class="table2">
-            	<%= list.category %>
-            </td>
-            <td class="table3">
-            	<%= list.item %>
-            </td>
-          </tr>
-          
-        
-
-	<% }); %>
-	</tbody>
-      </table>
-<!-- </ul> -->
+              <tr>
+                <td class="table1">
+                	<a href="/wishlist/<%= list.id %>"><%= list.name %></a>
+                </td>
+                <td class="table2">
+                	<%= list.category %>
+                </td>
+                <td class="table3">
+                	<%= list.item %>
+                </td>
+              </tr>
+              
+        <% }); %>
+    	</tbody>
+    </table>
+    <!-- </ul> -->
 </div>
 <% include ../partials/footer.ejs %>
