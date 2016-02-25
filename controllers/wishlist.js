@@ -53,22 +53,19 @@ router.get('/:id', function(req, res) {
 	var listId = req.params.id;
 	var userId = req.currentUser.id;
 	db.wishlist.findById(listId).then(function(list) {
-		list.getCategories({
-			include: [db.attraction]
-		}).then(function(categories) {
-			res.render('wishlist/show', {list: list, categories: categories})
-		});
-
-		/*if (list) {
+		if (list) {
 			if (list.userId === userId) {
-				console.log("List id:"+list.userId+" UserId: "+userId)
-				res.render('wishlist/show', {list: list});
+				list.getCategories({
+					include: [db.attraction]
+				}).then(function(categories) {
+					res.render('wishlist/show', {list: list, categories: categories})
+				});
 			} else {
 				res.send('Only that user can see their list');
 			}
 		} else {
 			res.send('Page not found.');
-		}*/
+		}
 	});
 });
 
@@ -99,6 +96,7 @@ router.post('/:id', function(req, res) {
 			var itemCategory = req.body.itemCategory;
 			db.category.findOne({
 				where: {
+					wishlistId: list.id,
 					categoryname: itemCategory
 				}
 			}).then(function(category) {
