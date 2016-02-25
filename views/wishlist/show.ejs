@@ -13,10 +13,12 @@
 		
 		<% category.attractions.forEach(function(attraction) { %>
 			<p><%= attraction.item %></p>
-			<form method="POST">
-				<input name="newItem" type="text" placeholder="Add item" />
-			</form>
 		<% }); %>
+
+		<form method="POST">
+			<input name="newItem" type="text" placeholder="Add item" />
+			<input name="itemCategory" type="hidden" value="<%= category.categoryname %>" />
+		</form>
 
 	<% }); %>
 </div>

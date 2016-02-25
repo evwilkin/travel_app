@@ -52,17 +52,12 @@ router.get('/new', function(req, res) {
 router.get('/:id', function(req, res) {
 	var listId = req.params.id;
 	var userId = req.currentUser.id;
-	db.wishlist.findById(listId
-		// , {
-		// 		include: [db.category, db.attraction]
-		// 	}
-			).then(function(list) {
-
-				list.getCategories({
-					include: [db.attraction]
-				}).then(function(categories) {
-					res.render('wishlist/show', {list: list, categories: categories})
-				});
+	db.wishlist.findById(listId).then(function(list) {
+		list.getCategories({
+			include: [db.attraction]
+		}).then(function(categories) {
+			res.render('wishlist/show', {list: list, categories: categories})
+		});
 
 		/*if (list) {
 			if (list.userId === userId) {
@@ -100,9 +95,29 @@ router.post('/:id', function(req, res) {
 					res.send("Category already exists");
 				}
 			});
+		} else if (newItem) {
+			var itemCategory = req.body.itemCategory;
+			db.category.findOne({
+				where: {
+					categoryname: itemCategory
+				}
+			}).then(function(category) {
+				db.attraction.findOrCreate({
+					where: {
+						categoryId: category.id,
+						item: newItem,
+						wishlistId: list.id
+					}
+				}).spread(function(item, created) {
+					if (created) {
+						res.redirect("/wishlist/"+listId);
+					} else {
+						res.send("Item already exists");
+					}
+				});
+			});	
 		}
 	});
-	// res.send("New Item: "+newItem+" in list: "+listId);
 });
 
 
