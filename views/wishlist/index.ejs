@@ -8,21 +8,25 @@
 <div class="container">
     <table class="centered highlight">
         <thead>
-        	<tr></tr>
+        	<tr>
+                <td>List Name</td>
+                <td>Categories</td>
+                <td>Items</td>
+            </tr>
         </thead>
         <tbody>
     <!-- <ul id="accordian" class="collapsible col s8 push-s2" data-collapsible="accordion"> -->
     	<% lists.forEach(function(list) { %>
 
               <tr>
-                <td class="table1">
+                <td>
                 	<a href="/wishlist/<%= list.id %>"><%= list.name %></a>
                 </td>
-                <td class="table2">
-                	<%= list.category %>
+                <td>
+                	<%= list.categories.length %>
                 </td>
-                <td class="table3">
-                	<%= list.item %>
+                <td>
+                	<%= list.attractions.length %>
                 </td>
               </tr>
               

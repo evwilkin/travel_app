@@ -1,11 +1,24 @@
 <% include ../partials/header.ejs %>
 
+<div class="container">
+	<h3><%= list.name %></a></h3>
 
-<h3><%= list.name %></a></h3>
-<h4><%= list.category %></h4>
-<p><%= list.item %></p>
-<form method="POST">
-	<input name="item" type="text" placeholder="Add item" />
-</form>
+	<form method="POST">
+		<input name="newCategory" type="text" placeholder="New Category" />
+	</form>
+
+	<% categories.forEach(function(category) { %>
+
+		<h4><%= category.categoryname %></h4>
+		
+		<% category.attractions.forEach(function(attraction) { %>
+			<p><%= attraction.item %></p>
+			<form method="POST">
+				<input name="newItem" type="text" placeholder="Add item" />
+			</form>
+		<% }); %>
+
+	<% }); %>
+</div>
 
 <% include ../partials/footer.ejs %>
