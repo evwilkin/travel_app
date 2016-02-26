@@ -3,6 +3,10 @@ body {
 	color: white;
 }
 
+h1, h3, h4, a, button, div {
+	font-family: 'Francois One', sans-serif;
+}
+
 nav {
 	background-color: #196ec2;
 }
@@ -21,6 +25,7 @@ i.inverse {
 #body {
 	background-color: black;
 	text-align: center;
+	font-family: 'Didact Gothic', sans-serif;
 }
 
 div.alert {
