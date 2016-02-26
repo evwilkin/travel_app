@@ -15,6 +15,10 @@ app.use(session({
   saveUninitialized: true
 }));
 app.use(flash());
+app.use(function(req,res,next){
+ res.locals.alerts = req.flash();
+ next();
+});
 app.use(function(req, res, next) {
   if (req.session.userId) {
     db.user.findById(req.session.userId).then(function(user) {
@@ -30,8 +34,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', function(req, res) {
-	res.render("index", {
-		alerts: req.flash(),
+  res.render("index", {
 		user: req.session.userId
 	});
 });

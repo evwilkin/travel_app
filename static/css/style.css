@@ -23,6 +23,18 @@ i.inverse {
 	text-align: center;
 }
 
+div.alert {
+	text-align: center;
+	font-size: 2em;
+	width: 50%;
+	margin: 0.5% auto;
+
+}
+
+div.alert.alert-danger {
+	background-color: red;
+}
+
 h1 {
 	text-align: center;
 }

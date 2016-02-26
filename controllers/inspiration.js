@@ -18,14 +18,16 @@ router.post('/', function(req, res) {
 			"text": q
 		}, function(err, result) {
 	    	var pictures = result.photos.photo;
-	    	if (err) {
-	    		res.send(err);
+	    	if (err || pictures.length === 0) {
+	    		req.flash('danger', 'Please try a different search.');
+				res.redirect("/inspiration");
 	    	} else {
 	    		res.render('inspiration/slideshow', {pictures: pictures, q: q});
 			}
 		});
 	} else {
-		res.send("Please enter a search term.");
+		req.flash('danger', 'Please enter a search term.');
+		res.redirect("/inspiration");
 	}
 });
 

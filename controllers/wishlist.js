@@ -14,6 +14,7 @@ router.get('/', function(req, res) {
 			});
 		});
 	} else {
+		req.flash('danger', 'Please log in to access your Wishlists');
 		res.redirect('/auth/login');
 	}
 });
@@ -45,6 +46,7 @@ router.get('/new', function(req, res) {
 	if (req.currentUser.username) {
 		res.render('wishlist/new');
 	} else {
+		req.flash('danger', 'Please log in to create a new wishlist.');
 		res.redirect('/auth/login');
 	}
 });
@@ -61,10 +63,12 @@ router.get('/:id', function(req, res) {
 					res.render('wishlist/show', {list: list, categories: categories})
 				});
 			} else {
-				res.send('Only that user can see their list');
+				req.flash('danger', 'Only that user can see their lists.');
+				res.redirect('/auth/login');
 			}
 		} else {
-			res.send('Page not found.');
+			req.flash('danger', 'Page not found.');
+			res.redirect('/auth/login');
 		}
 	});
 });
@@ -89,7 +93,8 @@ router.post('/:id', function(req, res) {
 				if (created) {
 					res.redirect("/wishlist/"+listId);
 				} else {
-					res.send("Category already exists");
+					req.flash('danger', 'Oops - that category already exists.');
+					res.redirect('/wishlist/'+listId);
 				}
 			});
 		} else if (newItem) {
@@ -110,7 +115,8 @@ router.post('/:id', function(req, res) {
 					if (created) {
 						res.redirect("/wishlist/"+listId);
 					} else {
-						res.send("Item already exists");
+						req.flash('danger', 'Oops - that item already exists.');
+						res.redirect('/wishlist/'+listId);
 					}
 				});
 			});	

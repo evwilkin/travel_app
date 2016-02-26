@@ -11,6 +11,7 @@ router.get('/', function(req, res) {
 			});
 		});
 	} else {
+		req.flash('danger', 'Please log in to access your Journals');
 		res.redirect('/auth/login');
 	}
 });
@@ -19,6 +20,7 @@ router.get('/new', function(req, res) {
 	if (req.currentUser.username) {
 		res.render('journal/new');
 	} else {
+		req.flash('danger', 'Please log in to create a new Journal');
 		res.redirect('/auth/login');
 	}
 });
@@ -28,13 +30,19 @@ router.get('/:id', function(req, res) {
 	var journalId = req.params.id;
 	if (userId) {
 		db.journal.findById(journalId).then(function(journal) {
-			if (journal.userId === userId) {
-				res.render('journal/show', {journal: journal});
+			if (journal) {
+				if (journal.userId === userId) {
+					res.render('journal/show', {journal: journal});
+				} else {
+					req.flash('danger', 'Only that user can view their journals.');
+					res.redirect('/journal');
+				}
 			} else {
-				res.send('Only that user can view their journals.');
+				res.send("Sorry, that Journal wasn't found");
 			}
 		});
 	} else {
+		req.flash('danger', 'Please log in to access your journals.');
 		res.redirect('/auth/login');
 	}
 });
@@ -54,6 +62,7 @@ router.post('/', function(req, res) {
 			});
 		});
 	} else {
+		req.flash('danger', 'Please log in to create a new journal.');
 		res.redirect('/auth/login');
 	}
 });

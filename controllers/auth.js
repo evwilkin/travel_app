@@ -25,11 +25,13 @@ router.post('/login', function(req, res) {
 					console.log(user.id);
 	  				res.redirect('/');
 				} else {
-					res.send('Username and/or password not found, please try again.');
+					req.flash('danger', 'Username and/or password not found, please try again.');
+					res.redirect('/auth/login');
 				}
 			})
 		} else {
-			res.send('Username and/or password not found, please try again or register.');
+			req.flash('danger', 'Username and/or password not found, please try again.');
+			res.redirect('/auth/login');
 		}
 	});	
 });
@@ -56,8 +58,8 @@ router.post('/register', function(req, res) {
 				req.session.userId = user.id;
 				res.redirect('/');
 			} else {
-				req.flash("danger", "user already exists");
-				res.send("Username already exists");
+				req.flash("danger", "User already exists, please choose another username");
+				res.redirect("/auth/register");
 			}
 		});
 	});
