@@ -190,4 +190,9 @@ td {
 	p.truncate {
 		font-size: 1.3em;
 	}
+
+	#newItemInput {
+		width: 25%;
+		text-align: center;
+	}
 }

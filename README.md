@@ -26,7 +26,17 @@ Part of the excitement of planning your next trip is knowing what you have to lo
 
 **Upcoming Features**
 
--Upload and attach your photos right to Journal entries
--Save photos from Inspiration to your Wishlists
--Add tags to Wishlists and Journals so you can quickly group together related items
--Share Wishlists with friends from group planning
+*Upload and attach your photos right to Journal entries
+*Save photos from Inspiration to your Wishlists
+*Add tags to Wishlists and Journals so you can quickly group together related items
+*Share Wishlists with friends from group planning
+*Back navigation buttons
+*Delete & edit Wishlists & Journals
+
+###Screenshots
+
+Original Wireframe:
+![AdventureTo Wireframe](https://farm2.staticflickr.com/1580/25278872735_4174d3e784_o.png "AdventureTo Wireframe")
+
+Database Schema:
+![AdventureTo Database Models](https://farm2.staticflickr.com/1659/24652092643_1f5940b25e_o.jpg "AdventureTo Database Schema")
