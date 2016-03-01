@@ -36,6 +36,10 @@ div.alert {
 
 }
 
+#billboard {
+	width: 100%;
+}
+
 div.alert.alert-danger {
 	background-color: red;
 }
@@ -93,6 +97,9 @@ img.materialboxed {
 
 footer.page-footer {
 	background-color: black;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 }
 
 div.collapsible-header {
