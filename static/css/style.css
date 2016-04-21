@@ -84,6 +84,10 @@ div.home {
 	background-color: #196EC2;
 }
 
+.tabs .tab a:hover {
+	color: #26A69A;
+}
+
 .tabs .tab a.active {
 	background-color: white;
 	color: #196EC2;
@@ -125,6 +129,12 @@ footer.page-footer {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
+}
+
+#github {
+	height: 20px;
+	padding-top: 6px;
+	padding-right: 5px;
 }
 
 div.collapsible-header {
