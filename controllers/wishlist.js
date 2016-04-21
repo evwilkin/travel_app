@@ -5,12 +5,13 @@ var router = express.Router();
 router.get('/', function(req, res) {
 	var userId = req.currentUser.id;
 	if (req.currentUser.username) {
-		db.user.findById(userId).then(function(user) {  //identify current user
+		//identify current user
+		db.user.findById(userId).then(function(user) {  
 			user.getWishlists({
 				include: [db.category, db.attraction]
-			}).then(function(lists) {		//find all user's wishlists
+			}).then(function(lists) {		
+				//find all user's wishlists
 				res.render('wishlist/index', {lists: lists});
-				// res.send(lists);
 			});
 		});
 	} else {

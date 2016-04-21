@@ -15,6 +15,10 @@ nav div ul li a {
 	font-size: 1.3em;
 }
 
+.homeLink {
+	margin-bottom: 60px;
+}
+
 i.inverse {
 	color: black;
 	padding-left: 1%;
@@ -56,6 +60,7 @@ div.text  {
 
 div.text h1 {
 	margin: 10% auto;
+	font-size: 3em;
 }
 
 div.home {
@@ -65,8 +70,20 @@ div.home {
 	height: 100vh;
 }
 
-ul.tabs {
-	font-size: 1.3em;
+.tabs .tab a {
+	font-size: 1em;
+	color: white;
+	background-color: #196EC2;
+}
+
+.tabs .tab a.active {
+	background-color: white;
+	color: #196EC2;
+}
+
+/* Change color of sliding underline on homepage tabs */
+.tabs .indicator {
+	background-color: #196EC2;
 }
 
 .background {
@@ -96,7 +113,7 @@ img.materialboxed {
 }
 
 footer.page-footer {
-	background-color: black;
+	background-color: rgba(0,0,0,0.92);
 	position: fixed;
 	bottom: 0;
 	width: 100%;
@@ -147,14 +164,18 @@ td {
 	text-align: center;
 }
 
-@media (min-width: 800px) {
+#regButton {
+	margin-bottom: 15px;
+}
+
+@media (min-width: 420px) {
 	
 	div.text h1 {
-		font-size: 8em;
+		font-size: 4em;
 	}
 
 	ul.tabs {
-		font-size: 1.8em;
+		font-size: 1.59em;
 	}
 
 	.background div p {
@@ -203,3 +224,160 @@ td {
 		text-align: center;
 	}
 }
+
+@media (min-width: 840px) {
+	body {
+		background-color: black;
+		color: white;
+	}
+
+	h1, h3, h4, a, button, div {
+		font-family: 'Francois One', sans-serif;
+	}
+
+	nav {
+		background-color: #196ec2;
+	}
+
+	nav div ul li a {
+		font-size: 1.3em;
+	}
+
+	i.inverse {
+		color: black;
+		padding-left: 1%;
+		font-size: 2.7rem;
+		height: 56px;
+	}
+
+	#body {
+		background-color: black;
+		text-align: center;
+		font-family: 'Didact Gothic', sans-serif;
+	}
+
+	div.alert {
+		text-align: center;
+		font-size: 2em;
+		width: 50%;
+		margin: 0.5% auto;
+
+	}
+
+	#billboard {
+		width: 100%;
+	}
+
+	div.alert.alert-danger {
+		background-color: red;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	div.text  {
+		border: solid white 4px;
+		background-color: rgba(0,0,0,0.75);
+		margin: 10% auto;
+	}
+
+	div.text h1 {
+		margin: 10% auto;
+		font-size: 7.5em;
+	}
+
+	div.home {
+		background-image: url("/images/forest.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: 100vh;
+	}
+
+	.tabs .tab a {
+		font-size: 1.3em;
+		color: white;
+		background-color: #196EC2;
+	}
+
+	.tabs .tab a.active {
+		background-color: white;
+		color: #196EC2;
+	}
+
+	/* Change color of sliding underline on homepage tabs */
+	.tabs .indicator {
+		background-color: #196EC2;
+	}
+
+	.background {
+		background-color: rgba(0,0,0,0.8);
+	}
+
+	.background div p {
+		font-size: 1.2em;
+	}
+
+	.background div h4 {
+		font-size: 1.6em;
+	}
+
+	.homeLink {
+		width: 100%;
+	}
+
+	div.material-placeholder {
+		display: inline;
+	}
+
+	img.materialboxed {
+		width: 45%;
+		height: 15%;
+		display: inline;
+	}
+
+	div.collapsible-header {
+		background-color: teal;
+		border: none;
+		margin-bottom: 1%;
+	}
+
+	#journals {
+		text-align: left;
+	}
+
+	div.card {
+		width: 100%;
+	}
+
+	p.journalText {
+		font-size: 1.5em;
+		text-align: justify;
+	}
+
+	#newJournal {
+		position: relative;
+	}
+
+	#flickr {
+		position: relative;
+		bottom: 0;
+	}
+
+	#accordian {
+		border: none;
+	}
+
+	#accordian li {
+		background-color: teal;
+	}
+
+	h3 {
+		display: inline;
+	}
+
+	td {
+		width: 33%;
+		text-align: center;
+	}
+}	

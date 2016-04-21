@@ -1,5 +1,3 @@
-console.log("Hello world?");
-
 $(document).ready(function() {
 
 	$(".dropdown-button").dropdown();
