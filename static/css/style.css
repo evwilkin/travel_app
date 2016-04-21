@@ -11,8 +11,12 @@ nav {
 	background-color: #196ec2;
 }
 
-nav div ul li a {
+nav div div ul li a {
 	font-size: 1.3em;
+}
+
+#dropdown1 {
+	margin-top: 64px;
 }
 
 #body .container {
@@ -183,11 +187,11 @@ td {
 	}
 
 	.background div p {
-		font-size: 1.8em;
+		font-size: 1.5em;
 	}
 
 	.background div h4 {
-		font-size: 2.2em;
+		font-size: 1.9em;
 	}
 
 	.homeLink {
@@ -230,19 +234,6 @@ td {
 }
 
 @media (min-width: 840px) {
-	body {
-		background-color: black;
-		color: white;
-	}
-
-	h1, h3, h4, a, button, div {
-		font-family: 'Francois One', sans-serif;
-	}
-
-	nav {
-		background-color: #196ec2;
-	}
-
 	nav div ul li a {
 		font-size: 1.3em;
 	}
@@ -254,12 +245,6 @@ td {
 		height: 56px;
 	}
 
-	#body {
-		background-color: black;
-		text-align: center;
-		font-family: 'Didact Gothic', sans-serif;
-	}
-
 	div.alert {
 		text-align: center;
 		font-size: 2em;
@@ -268,120 +253,23 @@ td {
 
 	}
 
-	#billboard {
-		width: 100%;
-	}
-
-	div.alert.alert-danger {
-		background-color: red;
-	}
-
-	h1 {
-		text-align: center;
-	}
-
-	div.text  {
-		border: solid white 4px;
-		background-color: rgba(0,0,0,0.75);
-		margin: 10% auto;
-	}
-
 	div.text h1 {
-		margin: 10% auto;
 		font-size: 7.5em;
-	}
-
-	div.home {
-		background-image: url("/images/forest.jpg");
-		background-size: cover;
-		background-repeat: no-repeat;
-		height: 100vh;
 	}
 
 	.tabs .tab a {
 		font-size: 1.3em;
-		color: white;
-		background-color: #196EC2;
-	}
-
-	.tabs .tab a.active {
-		background-color: white;
-		color: #196EC2;
-	}
-
-	/* Change color of sliding underline on homepage tabs */
-	.tabs .indicator {
-		background-color: #196EC2;
-	}
-
-	.background {
-		background-color: rgba(0,0,0,0.8);
 	}
 
 	.background div p {
-		font-size: 1.2em;
+		font-size: 1.8em;
 	}
 
 	.background div h4 {
-		font-size: 1.6em;
-	}
-
-	.homeLink {
-		width: 100%;
-	}
-
-	div.material-placeholder {
-		display: inline;
-	}
-
-	img.materialboxed {
-		width: 45%;
-		height: 15%;
-		display: inline;
-	}
-
-	div.collapsible-header {
-		background-color: teal;
-		border: none;
-		margin-bottom: 1%;
-	}
-
-	#journals {
-		text-align: left;
-	}
-
-	div.card {
-		width: 100%;
+		font-size: 2.2em;
 	}
 
 	p.journalText {
 		font-size: 1.5em;
-		text-align: justify;
-	}
-
-	#newJournal {
-		position: relative;
-	}
-
-	#flickr {
-		position: relative;
-		bottom: 0;
-	}
-
-	#accordian {
-		border: none;
-	}
-
-	#accordian li {
-		background-color: teal;
-	}
-
-	h3 {
-		display: inline;
-	}
-
-	td {
-		width: 33%;
-		text-align: center;
 	}
 }	
