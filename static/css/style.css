@@ -15,8 +15,12 @@ nav div ul li a {
 	font-size: 1.3em;
 }
 
+#body .container {
+	margin-bottom: 70px;
+}
+
 .homeLink {
-	margin-bottom: 60px;
+	margin-bottom: 70px;
 }
 
 i.inverse {
